@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <title>High Price Prediction</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="login">
+            <h1>High Cost Prediction</h1>
+
+                <!-- Main Input For Receiving Query to our ML -->
+            <form class="form" action="{{ url_for('predict')}}"method="post">
+                <label for="open">Open price</label>
+                <input type="text" id="open" name="open" placeholder="Open Price" required="required" /><br>
+                <label for="low">Low price</label>
+                <input type="text" id="low" name="low" placeholder="Lowest Price" required="required" /><br>
+                <label for="close">Close Price</label>
+                <input type="text" id="close" name="close" placeholder="Close Price" required="required" /><br>
+                <button class="btn" type="submit">Predict</button>
+
+            </form>
+
+            <br>
+            {{ prediction_text }}
+            </div>
+        </div>
+</html>
